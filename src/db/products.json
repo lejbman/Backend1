@@ -1,0 +1,68 @@
+[
+  {
+    "id": "dad45c35-4dd4-4bfc-b9bb-7de2346b5a45",
+    "title": "Coca Cola",
+    "description": "2,25 lts",
+    "code": "CocaGrande",
+    "price": 3000,
+    "status": true,
+    "stock": 100,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": []
+  },
+  {
+    "id": "fd905995-d8b1-4c50-bc66-2d856e5a85a2",
+    "title": "Coca Cola",
+    "description": "1,25 lts",
+    "code": "CocaMediana",
+    "price": 2000,
+    "status": true,
+    "stock": 150,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": []
+  },
+  {
+    "id": "328c267a-165b-44c7-91a6-7d9155a37a95",
+    "title": "Coca Cola",
+    "description": "500 mlts",
+    "code": "CocaChica",
+    "price": 1200,
+    "status": true,
+    "stock": 200,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": []
+  },
+  {
+    "id": "a6034635-7059-494d-a4da-670729f668a2",
+    "title": "Agua Villavicencio",
+    "description": "2 lts",
+    "code": "AguaVGrande",
+    "price": 1500,
+    "status": true,
+    "stock": 300,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": []
+  },
+  {
+    "id": "f033cbbc-49ab-4173-80dd-83c9de48a076",
+    "title": "Agua Villavicencio",
+    "description": "1,5 lts",
+    "code": "AguaVMediana",
+    "price": 1300,
+    "status": true,
+    "stock": 250,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": []
+  },
+  {
+    "id": "71581e56-5bbd-4a3e-92ec-8aadad8c8012",
+    "title": "Agua Villavicencio",
+    "description": "500 mlts",
+    "code": "AguaChica",
+    "price": 1000,
+    "status": true,
+    "stock": 280,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": []
+  }
+]
