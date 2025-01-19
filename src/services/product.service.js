@@ -24,58 +24,18 @@ class ProductService {
         }
     }
 
-    /**
-     * @return {Promise<Array>} - Devuelve todos los productos
-     */
+    // Obtener todos los productos
     async getAll() {
         return this.products;
     }
 
-    /**
-     * @param {string} id - Id del producto a buscar
-     * @return {object} - Devuelve el producto con el id pasado por parámetro
-     */
+    // Obtener un producto por ID
     async getById({ id }) {
         return this.products.find((product) => product.id === id);
     }
 
-    /**
-     * @param {object} product - Producto a crear
-     * @return {object} - Producto creado
-     */
-    
+    // Crear un nuevo producto
     async create({ title, description, code, price, status = true, stock = 0, category, thumbnails = [] }) {
-        // Validaciones de los campos
-        if (!title || typeof title !== 'string') {
-            throw new Error('El campo "title" es obligatorio y debe ser un string.');
-        }
-        if (!description || typeof description !== 'string') {
-            throw new Error('El campo "description" es obligatorio y debe ser un string.');
-        }
-        if (!code || typeof code !== 'string') {
-            throw new Error('El campo "code" es obligatorio y debe ser un string.');
-        }
-        if (!category || typeof category !== 'string') {
-            throw new Error('El campo "category" es obligatorio y debe ser un string.');
-        }
-        if (typeof price !== 'number' || price <= 0) {
-            throw new Error('El campo "price" debe ser un número mayor a 0.');
-        }
-        if (typeof stock !== 'number' || stock < 0) {
-            throw new Error('El campo "stock" debe ser un número mayor o igual a 0.');
-        }
-        if (typeof status !== 'boolean') {
-            throw new Error('El campo "status" debe ser un booleano.');
-        }
-        if (!Array.isArray(thumbnails) || !thumbnails.every((thumb) => typeof thumb === 'string')) {
-            throw new Error('El campo "thumbnails" debe ser un array de strings.');
-        }
-    
-        // Verificar duplicación del código
-        if (this.products.some((product) => product.code === code)) {
-            throw new Error('El código del producto ya existe.');
-        }
-    
         const id = uuid();
         const product = {
             id,
@@ -83,15 +43,17 @@ class ProductService {
             description,
             code,
             price,
-            status, // Por defecto será true si no se especifica
+            status,
             stock,
             category,
             thumbnails,
         };
-    
+
+        // Agregar el producto a la lista
         this.products.push(product);
-    
+
         try {
+            // Guardar el producto en el archivo
             await this.saveOnFile();
             return product;
         } catch (error) {
@@ -99,115 +61,76 @@ class ProductService {
             throw new Error('No se pudo guardar el producto.');
         }
     }
-    
-    
 
-    /**
- * @param {object} product - Producto a actualizar
- * @return {object} - Producto actualizado
- * @throws {Error} Si el producto no se encuentra o hay un error de validación
- */
-async update({ id, title, description, code, price, status, stock, category, thumbnails }) {
-    // Buscar el producto por ID
-    const product = this.products.find((product) => product.id === id);
+    // Actualizar un producto
+    async update({ id, title, description, code, price, status, stock, category, thumbnails }) {
+        const product = this.products.find((product) => product.id === id);
 
-    // Si no se encuentra el producto, lanzamos un error
-    if (!product) {
-        throw new Error(`Producto con id ${id} no encontrado.`);
+        if (!product) {
+            throw new Error(`Producto con id ${id} no encontrado.`);
+        }
+
+        if (id !== product.id) {
+            throw new Error('El campo "id" no puede ser modificado.');
+        }
+
+        // Actualizar el producto con los nuevos valores
+        Object.assign(product, {
+            title: title ?? product.title,
+            description: description ?? product.description,
+            code: code ?? product.code,
+            price: price ?? product.price,
+            status: status ?? product.status,
+            stock: stock ?? product.stock,
+            category: category ?? product.category,
+            thumbnails: thumbnails ?? product.thumbnails,
+        });
+
+        try {
+            // Guardar el archivo después de la actualización
+            await this.saveOnFile();
+            return product;
+        } catch (error) {
+            console.error('Error al actualizar el archivo:', error);
+            throw new Error('No se pudo actualizar el producto.');
+        }
     }
 
-    // Verificar que no se intente cambiar el ID
-    if (id !== product.id) {
-        throw new Error('El campo "id" no puede ser modificado.');
+    // Eliminar un producto
+    async delete({ id }) {
+        const index = this.products.findIndex((product) => product.id === id);
+
+        if (index === -1) {
+            return null; // Retorna null si no encuentra el producto
+        }
+
+        const [product] = this.products.splice(index, 1);
+
+        try {
+            // Guardar el archivo después de eliminar el producto
+            await this.saveOnFile();
+            return product;
+        } catch (error) {
+            console.error('Error al guardar el archivo después de eliminar el producto:', error);
+            throw new Error('No se pudo eliminar el producto.');
+        }
     }
 
-    // Validaciones de los campos proporcionados
-    if (title !== undefined && typeof title !== 'string') {
-        throw new Error('El campo "title" debe ser un string.');
-    }
-    if (description !== undefined && typeof description !== 'string') {
-        throw new Error('El campo "description" debe ser un string.');
-    }
-    if (code !== undefined && typeof code !== 'string') {
-        throw new Error('El campo "code" debe ser un string.');
-    }
-    if (category !== undefined && typeof category !== 'string') {
-        throw new Error('El campo "category" debe ser un string.');
-    }
-    if (price !== undefined && (typeof price !== 'number' || price <= 0)) {
-        throw new Error('El campo "price" debe ser un número mayor a 0.');
-    }
-    if (stock !== undefined && (typeof stock !== 'number' || stock < 0)) {
-        throw new Error('El campo "stock" debe ser un número mayor o igual a 0.');
-    }
-    if (status !== undefined && typeof status !== 'boolean') {
-        throw new Error('El campo "status" debe ser un booleano.');
-    }
-    if (thumbnails !== undefined && (!Array.isArray(thumbnails) || !thumbnails.every((thumb) => typeof thumb === 'string'))) {
-        throw new Error('El campo "thumbnails" debe ser un array de strings.');
-    }
-
-    // Actualizar el producto con los nuevos valores o mantener los actuales si no se pasan
-    Object.assign(product, {
-        title: title ?? product.title,
-        description: description ?? product.description,
-        code: code ?? product.code,
-        price: price ?? product.price,
-        status: status ?? product.status,
-        stock: stock ?? product.stock,
-        category: category ?? product.category,
-        thumbnails: thumbnails ?? product.thumbnails,
-    });
-
-    // Intentar guardar los cambios en el archivo o base de datos
-    try {
-        await this.saveOnFile();
-        return product;
-    } catch (error) {
-        console.error('Error al actualizar el archivo:', error);
-        throw new Error('No se pudo actualizar el producto.');
-    }
-}
-
-    
-
-   /**
- * @param {string} id - Id del producto a eliminar
- * @return {object|null} - Producto eliminado o null si no se encuentra
- */
-async delete({ id }) {
-    const index = this.products.findIndex((product) => product.id === id);
-
-    if (index === -1) {
-        return null; // Retorna null si no encuentra el producto
-    }
-
-    const [product] = this.products.splice(index, 1);
-
-    try {
-        await this.saveOnFile(); // Guardamos los cambios en el archivo
-        return product; // Devuelve el producto eliminado
-    } catch (error) {
-        console.error('Error al guardar el archivo después de eliminar el producto:', error);
-        throw new Error('No se pudo eliminar el producto.');
-    }
-}
-
-    
-
-    /**
-     * Guarda los products en el archivo
-     */
+    // Guardar los productos en el archivo
     async saveOnFile() {
         try {
+            console.log("Guardando productos en el archivo...");
+            // Guardar productos en formato JSON con indentación para mayor legibilidad
             await fs.promises.writeFile(this.path, JSON.stringify(this.products, null, 2));
+            console.log("Productos guardados exitosamente.");
         } catch (error) {
             console.error('Error al guardar el archivo:', error);
+            throw new Error('No se pudo guardar el archivo.');
         }
     }
 }
 
-// Exporto una instancia del servicio
+// Exportar una instancia del servicio
 export const productService = new ProductService({
-    path: './src/db/products.json',
+    path: './src/db/products.json', // Aquí defines el path donde se guardarán los productos
 });

@@ -1,0 +1,11 @@
+<h1>
+    Home Page
+</h1>
+
+<ul class="collection">
+    {{#each products}}
+        <li class="collection-item">
+            {{this.title}} - {{this.description}} - {{this.price}}
+        </li>
+    {{/each}}
+</ul>

@@ -64,5 +64,110 @@
     "stock": 280,
     "category": "Bebidas sin alcohol",
     "thumbnails": []
+  },
+  {
+    "id": "ea1f7853-0533-4561-a2f3-e71964f2e0c2",
+    "title": "7UP",
+    "description": "500 mlts",
+    "code": "Gaseosa",
+    "price": 1000,
+    "status": true,
+    "stock": 150,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": [
+      "foto1",
+      "foto2",
+      "foto3"
+    ]
+  },
+  {
+    "id": "c8067533-bf91-42ca-acd7-4aba884489e5",
+    "title": "Tonica",
+    "description": "2000 mlts",
+    "code": "Gaseosa",
+    "price": 3000,
+    "status": true,
+    "stock": 300,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": [
+      "foto1",
+      "foto2",
+      "foto3"
+    ]
+  },
+  {
+    "id": "2d061b9f-9223-4b04-8228-f814d919597a",
+    "title": "Crush",
+    "description": "1500 mlts",
+    "code": "Gaseosa",
+    "price": 1500,
+    "status": true,
+    "stock": 300,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": [
+      "foto1",
+      "foto2",
+      "foto3"
+    ]
+  },
+  {
+    "id": "7c200bf8-a219-41df-b6f1-6189d769c05b",
+    "title": "CrushFree",
+    "description": "1500 mlts",
+    "code": "Gaseosa",
+    "price": 1500,
+    "status": true,
+    "stock": 300,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": [
+      "foto1",
+      "foto2",
+      "foto3"
+    ]
+  },
+  {
+    "id": "d52b3b55-74f1-4427-998a-49e0d3ba26bf",
+    "title": "PasosTorosFree",
+    "description": "1500 mlts",
+    "code": "Gaseosa",
+    "price": 1500,
+    "status": true,
+    "stock": 300,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": [
+      "foto1",
+      "foto2",
+      "foto3"
+    ]
+  },
+  {
+    "id": "a7d62ca0-fd96-4a1e-9386-dccd7da0ce80",
+    "title": "PasosToros",
+    "description": "1500 mlts",
+    "code": "Gaseosa",
+    "price": 1500,
+    "status": true,
+    "stock": 300,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": [
+      "foto1",
+      "foto2",
+      "foto3"
+    ]
+  },
+  {
+    "id": "009e32c7-f8e9-401f-8d28-98717783916d",
+    "title": "Pomelo",
+    "description": "1500 mlts",
+    "code": "Gaseosa",
+    "price": 1500,
+    "status": true,
+    "stock": 300,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": [
+      "foto1",
+      "foto2",
+      "foto3"
+    ]
   }
 ]
