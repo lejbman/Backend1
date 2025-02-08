@@ -33,141 +33,113 @@
     "thumbnails": []
   },
   {
-    "id": "a6034635-7059-494d-a4da-670729f668a2",
-    "title": "Agua Villavicencio",
-    "description": "2 lts",
-    "code": "AguaVGrande",
-    "price": 1500,
-    "status": true,
-    "stock": 300,
-    "category": "Bebidas sin alcohol",
-    "thumbnails": []
-  },
-  {
-    "id": "f033cbbc-49ab-4173-80dd-83c9de48a076",
-    "title": "Agua Villavicencio",
+    "id": "66d01ed8-3412-4767-b3e3-d798d60ee272",
+    "title": "Fanta",
     "description": "1,5 lts",
-    "code": "AguaVMediana",
-    "price": 1300,
+    "code": "FantaMediana",
+    "price": 1800,
     "status": true,
-    "stock": 250,
+    "stock": 100,
     "category": "Bebidas sin alcohol",
     "thumbnails": []
   },
   {
-    "id": "71581e56-5bbd-4a3e-92ec-8aadad8c8012",
-    "title": "Agua Villavicencio",
-    "description": "500 mlts",
-    "code": "AguaChica",
-    "price": 1000,
+    "id": "3e614091-ce0e-48af-b492-736ee4b2848e",
+    "title": "Pepsi",
+    "description": "2,25 lts",
+    "code": "PepsiGrande",
+    "price": 2900,
     "status": true,
-    "stock": 280,
+    "stock": 100,
     "category": "Bebidas sin alcohol",
     "thumbnails": []
   },
   {
-    "id": "ea1f7853-0533-4561-a2f3-e71964f2e0c2",
-    "title": "7UP",
+    "id": "4fe460a5-79b7-432e-9cc5-c28d2880cd25",
+    "title": "Sprite",
     "description": "500 mlts",
-    "code": "Gaseosa",
-    "price": 1000,
+    "code": "SpriteChica",
+    "price": 1100,
+    "status": true,
+    "stock": 100,
+    "category": "Bebidas sin alcohol",
+    "thumbnails": []
+  },
+  {
+    "id": "2a262657-78ec-4419-8c68-d7c93a5701d9",
+    "title": "Jugo Cepita Naranja",
+    "description": "1 lts",
+    "code": "JugoCepita",
+    "price": 1600,
+    "status": true,
+    "stock": 100,
+    "category": "Jugos",
+    "thumbnails": []
+  },
+  {
+    "id": "ec321437-9df0-4ea8-9827-7435d24cd31b",
+    "title": "Jugo Baggio Durazno",
+    "description": "1 lts",
+    "code": "JugoBaggio",
+    "price": 1700,
+    "status": true,
+    "stock": 100,
+    "category": "Jugos",
+    "thumbnails": []
+  },
+  {
+    "id": "66a1efeb-289c-4f32-b4d4-32fd8a0659f9",
+    "title": "Leche La Serenísima",
+    "description": "1 lts",
+    "code": "LecheEntera",
+    "price": 900,
+    "status": true,
+    "stock": 200,
+    "category": "Lácteos",
+    "thumbnails": []
+  },
+  {
+    "id": "4d9eb47b-7e30-4e89-8666-1234eaf4b8fc",
+    "title": "Yogur Danone",
+    "description": "500 grs",
+    "code": "YogurDanone",
+    "price": 1200,
     "status": true,
     "stock": 150,
-    "category": "Bebidas sin alcohol",
-    "thumbnails": [
-      "foto1",
-      "foto2",
-      "foto3"
-    ]
+    "category": "Lácteos",
+    "thumbnails": []
   },
   {
-    "id": "c8067533-bf91-42ca-acd7-4aba884489e5",
-    "title": "Tonica",
-    "description": "2000 mlts",
-    "code": "Gaseosa",
-    "price": 3000,
+    "id": "3cb5c869-77e4-42fb-9992-6bb356b043e5",
+    "title": "Queso Cremoso",
+    "description": "300 grs",
+    "code": "QuesoCremoso",
+    "price": 2500,
     "status": true,
-    "stock": 300,
-    "category": "Bebidas sin alcohol",
-    "thumbnails": [
-      "foto1",
-      "foto2",
-      "foto3"
-    ]
+    "stock": 100,
+    "category": "Lácteos",
+    "thumbnails": []
   },
   {
-    "id": "2d061b9f-9223-4b04-8228-f814d919597a",
-    "title": "Crush",
-    "description": "1500 mlts",
-    "code": "Gaseosa",
-    "price": 1500,
+    "id": "b93b147e-c85e-4b36-b86b-bf24f054ac51",
+    "title": "Galletitas Oreo",
+    "description": "120 grs",
+    "code": "GalletasOreo",
+    "price": 900,
     "status": true,
-    "stock": 300,
-    "category": "Bebidas sin alcohol",
-    "thumbnails": [
-      "foto1",
-      "foto2",
-      "foto3"
-    ]
+    "stock": 180,
+    "category": "Snacks",
+    "thumbnails": []
   },
   {
-    "id": "7c200bf8-a219-41df-b6f1-6189d769c05b",
-    "title": "CrushFree",
-    "description": "1500 mlts",
-    "code": "Gaseosa",
-    "price": 1500,
+    "id": "c93d047e-c82d-4c36-bd5b-bf94f054cd72",
+    "title": "Papas Lays Clásicas",
+    "description": "200 grs",
+    "code": "PapasLays",
+    "price": 1900,
     "status": true,
-    "stock": 300,
-    "category": "Bebidas sin alcohol",
-    "thumbnails": [
-      "foto1",
-      "foto2",
-      "foto3"
-    ]
-  },
-  {
-    "id": "d52b3b55-74f1-4427-998a-49e0d3ba26bf",
-    "title": "PasosTorosFree",
-    "description": "1500 mlts",
-    "code": "Gaseosa",
-    "price": 1500,
-    "status": true,
-    "stock": 300,
-    "category": "Bebidas sin alcohol",
-    "thumbnails": [
-      "foto1",
-      "foto2",
-      "foto3"
-    ]
-  },
-  {
-    "id": "a7d62ca0-fd96-4a1e-9386-dccd7da0ce80",
-    "title": "PasosToros",
-    "description": "1500 mlts",
-    "code": "Gaseosa",
-    "price": 1500,
-    "status": true,
-    "stock": 300,
-    "category": "Bebidas sin alcohol",
-    "thumbnails": [
-      "foto1",
-      "foto2",
-      "foto3"
-    ]
-  },
-  {
-    "id": "009e32c7-f8e9-401f-8d28-98717783916d",
-    "title": "Pomelo",
-    "description": "1500 mlts",
-    "code": "Gaseosa",
-    "price": 1500,
-    "status": true,
-    "stock": 300,
-    "category": "Bebidas sin alcohol",
-    "thumbnails": [
-      "foto1",
-      "foto2",
-      "foto3"
-    ]
+    "stock": 150,
+    "category": "Snacks",
+    "thumbnails": []
   }
 ]

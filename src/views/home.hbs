@@ -1,11 +1,14 @@
-<h1>
-    Home Page
-</h1>
+<h1>Tu súper online - Productos Disponibles</h1>
 
 <ul class="collection">
     {{#each products}}
         <li class="collection-item">
-            {{this.title}} - {{this.description}} - {{this.price}}
+            <h3>{{this.title}}</h3>
+            <p>{{this.description}}</p>
+            <p>Precio: ${{this.price}}</p>
+            <p>Categoria: {{this.category}}</p>
+            <p>Stock: {{this.stock}}</p>
+            <a href="/productos/{{this._id}}">Ver detalles</a>
         </li>
     {{/each}}
 </ul>
