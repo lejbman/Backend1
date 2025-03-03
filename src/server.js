@@ -9,6 +9,10 @@ import { productRoutes } from './routes/product.routes.js';
 import { cartRoutes } from './routes/cart.routes.js';
 import { viewsRoutes } from './routes/views.routes.js';
 import productsModel from './models/products.model.js';
+import sessionsRoutes from './routes/sessions.routes.js';
+import initializePassport from './config/passport.config.js';
+import passport from 'passport';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 const PORT = 8080;
@@ -18,6 +22,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, '../src/public')));
+app.use(cookieParser());
+app.use(passport.initialize());
+initializePassport();
 
 // Handlebars Config sin helpers externos
 app.engine(
@@ -39,6 +46,7 @@ app.set('views', path.resolve(__dirname, '../src/views'));
 app.use('/', viewsRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/carts', cartRoutes);
+app.use('/api/sessions', sessionsRoutes);
 
 // Iniciar servidor
 const server = app.listen(PORT, () => {

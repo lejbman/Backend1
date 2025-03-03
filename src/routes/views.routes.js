@@ -82,3 +82,12 @@ viewsRoutes.get("/realTimeProducts", async (req, res) => {
         res.status(500).send("Error al cargar la vista de productos en tiempo real");
     }
 });
+
+// Backend II
+viewsRoutes.get("/register", (req, res) => {
+    res.render("register");
+})
+
+viewsRoutes.get("/login", (req, res) => {
+    res.render("login");
+})
